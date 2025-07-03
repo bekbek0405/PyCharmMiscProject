@@ -14,7 +14,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from itertools import combinations
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from statsmodels.tsa.arima.model import ARIMA
-from statsmodels.tsa.statespace.sarimax import SARIMAX
+from pmdarima import auto_arima
 
 # Ignore warnings
 warnings.filterwarnings("ignore")
