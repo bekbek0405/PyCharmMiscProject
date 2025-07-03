@@ -6,4 +6,3 @@ mlxtend
 oauth2client
 gspread
 statsmodels
-pmdarima
