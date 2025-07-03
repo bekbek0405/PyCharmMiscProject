@@ -6,4 +6,4 @@ mlxtend
 oauth2client
 gspread
 statsmodels
-pmdarima==2.0.3
+pmdarima
