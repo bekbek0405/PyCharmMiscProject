@@ -18,8 +18,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from pmdarima import auto_arima
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds_dict = st.secrets["gspread"]
-creds = ServiceAccountCredentials.from_json_keyfile_dict(dict(creds_dict), scope)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gspread"], scope)
 client = gspread.authorize(creds)
 # Ignore warnings
 
