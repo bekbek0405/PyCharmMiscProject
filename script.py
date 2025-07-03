@@ -17,9 +17,6 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 from statsmodels.tsa.arima.model import ARIMA
 from pmdarima import auto_arima
 
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gspread"], scope)
-client = gspread.authorize(creds)
 # Ignore warnings
 
 warnings.filterwarnings("ignore")
@@ -82,7 +79,7 @@ def load_data_from_google_sheets(url):
 
 def connect_to_google_sheets(sheet_name="Products"):
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gspread"], scope)
     client = gspread.authorize(creds)
     try:
         sheet = client.open_by_url(
